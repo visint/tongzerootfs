@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;  minimum-scale=1.0; maximum-scale=1.0">
+    <meta http-equiv="keywords" content="爱熊宝客户端">
+    <meta name="description" content="爱熊宝操作说明">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/step.css" />
+    <title>家庭网关</title>
+    <style>
+        body{  background: -webkit-linear-gradient(#0889D0,#13A0AB,#24C472); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#0889D0,#13A0AB,#24C472); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#0889D0,#13A0AB,#24C472); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#0889D0,#13A0AB,#24C472); /* 标准的语法 */
+
+        }
+        header{height:50px;}
+        .header_right{float:right;color:#fff;font-size: 15px;line-height: 50px;margin-right:15px;}
+        .header_right span{background: url("images/close.png") no-repeat;background-size: 20px 20px;width:20px;height:20px;display: inline-block;position: relative;top:3px;margin-right: 10px;}
+
+        .content{margin-top:20px;height:370px;border-bottom: 2px solid #109BB4;padding-bottom: 20px;}
+        .content .show_left{margin-top: 100px;width:50%;display: inline-block;float: left;}
+        .content .show_left .show_num{text-align: center;font-size: 20px;color:#015493;}
+        .content .show_left .show_num span{font-size: 50px;color:#fff;}
+        .content .show_left .show_txt{margin: 20px auto; width: 130px;display: block;}
+        .content .show_left .show_txt img{width:30px;height:20px;float: left;}
+        .content .show_left .show_txt p{font-size: 18px;color:#015493;margin-left: 40px;}
+        .content .show_right{float:right;width:45%;margin-right:5%;background: rgba(105, 186, 218, 0.5);border-radius: 5px;}
+        .content .show_right div{border-bottom: 1px solid #109BB4;}
+        .content .show_right div p:nth-child(1){color:#015493;font-size: 16px;padding: 15px 10px 0;}
+        .content .show_right div p:nth-child(2){color:#C3E6FF;height: 40px; font-size: 15px; padding: 5px 5px 5px 10px;}
+
+        .foot{ overflow: hidden;}
+        .foot div{width:50%;float: left;display: inline-block;text-align: center;}
+        .foot div img{width:60px;height:50px;margin-top:20px;}
+        .foot div p{margin-top: 10px;color:#fff;font-size: 18px;margin-bottom: 20px;}
+
+        /*修改密码*/
+         .change_pwd{position:absolute;top:50%;width:320px;padding:20px 0;opacity:0.8;filter:alpha(opacity=80);background:#0873a6;background:rgba(8,115,166,0.8) !important;z-index:101;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;display:none;}
+         .change_pwd ul li{margin:0 auto;padding:10px 0;}
+         .change_pwd ul li label{display:inline-block;width:125px;color:#fff;font-size:16px;text-align:right;}
+         .change_pwd ul li input{width:175px;padding:12px 0;border:0 none;background:#fff;text-indent:10px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;box-sizing:border-box;}
+         .change_pwd ul li:nth-of-type(2){position:relative;}
+         .change_pwd ul li:nth-of-type(3), .change_pwd ul li:nth-of-type(4){display:none;}
+         .change_pwd ul li span{position:absolute;right:-110px;top:50%;margin-top:-15px;height:30px;line-height:30px;padding:0 10px;font-size:14px;color:#fff;border:1px solid #fff;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;cursor:pointer;}
+         .change_pwd ul li span:hover{background:#fff;color:#0392d8;}
+         .change_pwd ul li input:focus{-webkit-box-shadow:0px 0px 5px #CCC;-moz-box-shadow:0px 0px 5px #CCC;box-shadow:0px 0px 5px #CCC;}
+         .change_pwd .btn:after{ content:""; display:block; height:0; visibility:hidden; clear:both; }
+         .change_pwd .btn .closed{float:left;margin-left: 47px;margin-top:20px;cursor:pointer;}
+         .change_pwd .btn .closed p{width:80px;padding:5px 0;margin-left:10px;border:1px solid #fff;font-size:16px;color:#fff;text-align:center;background:none;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
+         .change_pwd .btn .confirmation{margin: 0 auto; margin-top: 20px; cursor: pointer; display: inline-block; margin-left: 50px;}
+         .change_pwd .btn .confirmation p{width:80px;padding:5px 0;border:1px solid #fff;font-size:16px;color:#fff;text-align:center;background:none;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
+         .change_pwd .btn .closed p:hover{background:#fff;color:#0392d8;}
+         .change_pwd .btn .confirmation p:hover{background:#fff;color:#0392d8;}
+
+         
+        /*修改名称*/
+         .change_wifiName{position:absolute;top:50%;width:284px;padding:20px 0;filter:alpha(opacity=80);background:#0873a6;background:rgba(8,115,166,0.8) !important;z-index:101;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;display:none;}
+         .change_wifiName ul li{margin:0 auto;padding:10px 0;}
+         .change_wifiName ul li label{display:inline-block;width:90px;color:#fff;font-size:16px;text-align:right;}
+         .change_wifiName ul li input{width:175px;padding:12px 0;border:0 none;background:#fff;text-indent:10px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;box-sizing:border-box;}
+         .change_wifiName ul li input:focus{-webkit-box-shadow:0px 0px 5px #CCC;-moz-box-shadow:0px 0px 5px #CCC;box-shadow:0px 0px 5px #CCC;}
+         .change_wifiName .btn{width:350px;margin:0 auto;}
+         .change_wifiName .btn:after{ content:""; display:block; height:0; visibility:hidden; clear:both; }
+         .change_wifiName .btn .closed{float:left;width:150px;margin:0 auto;margin-top:20px;cursor:pointer;}
+         .change_wifiName .btn .closed p{margin-left:40px;width:80px;padding:5px 0;border:1px solid #fff;font-size:16px;color:#fff;text-align:center;background:none;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
+         .change_wifiName .btn .confirmation{margin-left: 14px; display: inline-block;margin-top:20px;}
+         .change_wifiName .btn .confirmation p{width:80px;padding:5px 0;border:1px solid #fff;font-size:16px;color:#fff;text-align:center;background:none;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
+         .change_wifiName .btn .closed p:hover{background:#fff;color:#0392d8;}{background:#fff;color:#0392d8;}
+         .change_wifiName .btn .confirmation p:hover{background:#fff;color:#0392d8;}{background:#fff;color:#0392d8;}
+
+            @media only screen and (min-height:710px) {
+                html,body{height:100%;
+                    position:relative;}
+            }
+
+    </style>
+</head>
+<body>
+<header>
+    <p class="header_right exit"><span></span>退出</p>
+</header>
+<div class="content">
+    <div class="show_left">
+        <div class="show_num"><span id="app_num">0</span>台</div>
+        <div class="show_txt">
+            <img src="images/pc_icon2.png">
+            <p>设备连接数</p>
+        </div>
+    </div>
+    <div class="show_right">
+        <div class="link">
+            <p>当前连接方式：</p>
+            <p id="connectWay">数据获取中...</p>
+        </div>
+        <div class="IP">
+            <p>IP地址：</p>
+            <p id="idAddress">连接重试中...</p>
+        </div>
+        <div class="link_name">
+            <p>无线连接名称：</p>
+            <p id="wirelessName"></p>
+        </div>
+        <div class="link_num">
+            <p>设备连接数</p>
+            <p id="wirelessNum"></p>
+        </div>
+    </div>
+</div>
+<div class="foot">
+    <div class="link_set">
+        <img src="images/link_setting.png">
+        <p>网络设置</p>
+    </div>
+    <div class="xitong_set">
+        <img src="images/window_gl.png">
+        <p>系统管理</p>
+    </div>
+    <div class="wuxian_set">
+        <img src="images/wuxian_setting.png">
+        <p>无线设置</p>
+    </div>
+    <div class="psd_set">
+        <img src="images/set_psd.png">
+        <p>修改密码</p>
+    </div>
+</div>
+
+<div class="change_pwd layui-anim">
+    <ul>
+        <li>
+            <label>登录密码：</label>
+            <input type="password" placeholder="请输入新的登录密码" name="pwdVal1" maxlength="30">
+        </li>
+        <li>
+            <label>确认登录密码：</label>
+            <input type="password" placeholder="再次输入登录密码" name="pwdVal2" maxlength="30">
+        </li>
+        <li id="first_input">
+            <label>WiFi密码：</label>
+            <input type="password" placeholder="请输入新的WiFi密码" name="pwdVal3" maxlength="30">
+        </li>
+        <li id="second_input">
+            <label>确认WiFi密码：</label>
+            <input type="password" placeholder="再次输入WiFi密码" name="pwdVal4" maxlength="30">
+        </li>
+    </ul>
+    <div class="btn">
+        <div class="closed">
+            <p>关闭</p>
+        </div>
+        <div class="confirmation setPwdVal">
+            <p>确定</p>
+        </div>
+    </div>
+</div>
+<div class="change_wifiName layui-anim">
+    <ul>
+        <li>
+            <label>wifi名称：</label>
+            <input type="text" placeholder="WiFi名称" name="wifiName1" maxlength="20">
+        </li>
+        <li>
+            <label>wifi密码：</label>
+            <select id="set_pass">
+                <option value = "pass_null">无密码</option>
+                <option value = "pass_set">设置密码</option>
+            </select>
+        </li>
+        <li id="show_setpass">
+            <label>设置密码：</label>
+            <input type="text" placeholder="请输入新的WiFi密码" name="wifi_pass" maxlength="20">
+        </li>
+    </ul>
+    <div class="btn">
+        <div class="closed">
+            <p>关闭</p>
+        </div>
+        <div class="confirmation setWifiName">
+            <p>确定</p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/app_ixbear.js"></script>
+<script type="text/javascript" src="js/app_ixbsetting.js"></script>
+
+</body>
+</html>
